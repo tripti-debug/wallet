@@ -1,0 +1,217 @@
+
+
+.login-ctn{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    height: 85vh;
+    background-color: #F4F6F7;
+}
+[id=image]{
+    align-self: center;
+}
+[id=logo]{
+    align-self: center;
+    color: rgb(135, 152, 170);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size:24px;
+}
+.wallet-logo{
+    justify-content:center;
+    display: flex;
+    width:40%
+}
+ 
+
+.login-table{
+    color:black;
+    padding: 2%;
+    font-size: 33px;
+    border: 4px solid #f1f1f1;
+    background-color: white;
+    width: 40%;
+    
+} 
+.personal-line{
+    margin-top: 40px;
+    margin-left:0px;
+    font-size:22px; 
+}
+.personal-ctn{
+    display: flex;
+    text-align: center;
+}
+[id=firstname]{
+    margin-top: 10px;
+    margin-left:0px; 
+    border-radius: 18px;
+    border:1px solid gray;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+  }
+[id=lastname],[id=email]{
+    margin-top: 10px;
+    margin-left:20px;
+    border-radius: 18px;
+    border:1px solid gray;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+}
+
+.personal-ctn-2{
+    display: flex;
+    text-align: center;
+}
+[id=tel]{
+    margin-top: 20px;
+    margin-left:0px;
+    text-align: center;
+    width: 180px;
+    height: 40px; 
+    border-radius: 18px;
+    border:1px solid gray;
+  }
+[id=ssn],[id=password]{
+    margin-top: 20px;
+    margin-left:20px;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+    border-radius: 18px;
+    border:1px solid gray;
+    text-align: center;
+}   
+
+
+.bank-line{
+    margin-top: 40px;
+    margin-left:0px;
+    font-size:22px;
+}
+.bank-ctn{
+    display: flex;
+}
+
+[id=accountnumber]{
+    text-align: center;
+    margin-top: 10px;
+    margin-left:0px;
+    width: 180px;
+    height: 40px;
+    border-radius: 18px;
+    border:1px solid gray;
+    
+}
+[id=bankname],[id=branch]{
+    text-align: center;
+    margin-top: 10px;
+    margin-left:20px;
+    width: 180px;
+    height: 40px;
+    border-radius: 18px;
+    border:1px solid gray;
+    
+}
+
+[id=submit-btn]{
+    text-align: center;
+    margin-top: 30px;
+    margin-left:19vh;
+    background-color: #54ABDC;
+    border-radius: 18px;
+    border:none;
+    color: white;
+    width:250px;
+    height:40px;
+}
+.login{
+    margin-top: 20px;
+    margin-left:2vh;
+    color:black;
+    width: 300px;
+    font-size: 16px;
+}
+.sign-in-background{
+    display: none;
+    /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 25vh; /* Location of the box */
+   left: 0;
+   top: 0;
+   width:100%;
+   height:100%;/* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: black; /* Fallback color */
+   background-color: rgba(0,0,0,0.7); 
+ }
+ .signin-ctn{
+     
+     height: 40vh;
+     width:50vh;
+     border: 1px solid black;
+     margin-left: 35%;
+     padding:2%;
+     background-color: white;
+ }
+ .sign-in-header{
+     font-size: 28px;
+     display: flex;
+     justify-content:space-between;
+     border-bottom: black 1px solid;
+     height:5vh;
+ }
+ [id="closeButton"]{
+     height:3vh;
+     width:9vh;
+ }
+ .element-ctn{
+     display: flex;
+     margin-top: 1vh;
+     align-content: center;
+     flex-direction: column;
+     background-color: #CEDEE7;
+     padding: 5%;
+     height: 70%;
+   
+ }
+ [id="sign-in-button"]{
+     border: none;
+     background-color: white;
+     font-size: 16px;
+     font-family: 'Times New Roman', Times, serif;
+     color: #0026ff;
+    
+ }
+ [id=sign-in-ssn],[id=sign-in-password]{
+     width: 44vh;
+     height:6vh;
+     border-radius: 12px;
+     border: none;
+     text-align: center;
+     margin-top: 5%;
+ }
+ [id=login-button]{
+    width: 44vh;
+    height:6vh;
+     border-radius: 12px;
+     border: none;
+     text-align: center;
+     margin-top: 4%;
+     font-weight: bold;
+     background-color: #54ABDC;
+     color: white;
+ }
+ [id=login-button]:hover{
+     background-color: #05C342;
+     color:white;
+     cursor: pointer;
+   }
+ 
+
+
+

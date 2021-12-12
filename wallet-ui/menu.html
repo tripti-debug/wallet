@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="new_menu.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script> 
+    <script src="https://kit.fontawesome.com/22e0804487.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <title>Document</title>
+    <script src=menu.js>
+    </script> 
+</head>
+<body>
+  <div class=menu-ctn>
+      <div class="btn-ctn" id="default">
+        <img src="https://worldwaterskiers.com/wp-content/themes/WorldWaterSkiers/downloads/logos/W-Icon-White-Square.png"id=homePageWalletLogo>
+        <label id="homePageWalletHeader">WALLET</label>
+        <button class="tablink" id="tabcontent" onclick="changeColor(this,'main')">Home</button>
+        <button class="tablink" id="tabcontent" onclick="changeColor(this,'menu-btn')">Menu</button>
+        <button class="tablink" id="tabcontent" onclick="changeColor(this,'account')">Account</button>
+        <button class="tablink" id="tabcontent" onclick="changeColor(this,'transactions-tab')">Transaction</button>
+        <button class="tablink" id="tabcontent" onclick="changeColor(this,'statements-tab')">Metrics</button>
+        <button class="menu-logout" id=menu-logout-btn onclick="logoutMenu(this)">Logout</button>
+    </div>
+    <div class=tabContainer id="main">
+      <p>Welcome <span id=firstNameSpan></span>!! We are happy that you signed up for wallet. To start transaction using wallet please verify your <b>Email</b>,<b>Phone Numnber</b> and <b>Bank</b>.</p>
+      <div class=verification-ctn>
+          <div class=verify-email-ctn>
+            <i class="fas fa-envelope-open-text fa-7x" id=verifyEmailImage></i>
+            <button type="submit" id=verifyEmail onclick="generate(this,'submitOTP')">Verify Email</button>
+          </div>
+          <div class=verify-phone-ctn>
+            <i class="fas fa-phone-square fa-7x" id=verifyPhoneImage></i>
+            <button type="submit" id="verifyPhone" onclick="generate(this,'phoneSubmitOTP')">Verify Phone No.</button>
+          </div>
+          <div class=verify-bank-ctn>
+            <i class="fas fa-university fa-7x" id=verifyBankImage></i>
+            <button type="submit" id=verifyBank onclick="generateMoneyToVerifyFromBank(this,'bankSubmitOTP')">Verify Bank</button>
+          </div>
+      </div>
+      <hr>
+      <div class=acount-information-ctn>
+        <div class=span-ctn>
+          <p>Your ssn is: </p>
+          <span id="ssnSpan"></span>
+        </div>
+        <div class= span-ctn>
+          <p>Your current balance is: </p>
+          <span id="walletBalanceSpan"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class=tabContainer id="menu-btn">
+        <label id="heading">Select one of the given options</label>
+          <div class=action-ctn>
+            <button class="transact-btn" id="send" onclick="PageDisplay(this,'sendMoney')">Send Money</button>
+            <button class="transact-btn" id="request" onclick="PageDisplay(this,'requestMoney')">Request Money</button>
+            <button class="transact-btn" id="addMoney" onclick="PageDisplay(this,'addMoneyToWallet')">Add Money</button>
+            <button class="transact-btn" id="depositMoney" onclick="PageDisplay(this,'depositMoneyToBank')">Deposit Money</button>
+          </div>
+    </div>
+
+    <div class=tabContainer id="account">
+     
+      <div class=personalDetail-ctn>
+        <label id="personalDetail">Personal Details</label>
+        <div style="display: flex; justify-content: space-between;">
+          <button id="personalDetailEdit" onclick="editPersonalDetails()">Edit</button>
+          <button id="personalDetailSave" onclick="editPersonalDetailsSave()">Save</button>
+        </div>
+      </div>
+      <div class="personalDetailInput">
+          <div>
+            <label id=firstNameLabel>First Name: </label><input type="text" placeholder="first name" id="firstname" disabled>
+          </div>
+          <div>
+            <label id=lastNameLabel>Last Name: </label><input type="text" placeholder="last name" id="lastname" disabled>
+          </div>
+          <div>
+            <label id=telephoneLabel>Telephone No.: </label><input type="tel" placeholder="telephone" id="tel" disabled>
+          </div>
+          <div>
+            <label id=emailLabel>Email Id: </label><input type="email" placeholder="email" id="mailId" disabled>
+          </div>
+          <div>
+            <label id=passwordLabel>Password: </label><input type="password" placeholder="password" id="password" disabled>
+          </div>
+      </div>
+      <div class=bankDetail-ctn>
+          <label id="bankDetail">Bank Details</label>
+          <div style="display: flex; justify-content: space-between;">
+            <button id="addBankRowBtn" onclick="addBankRow()">Add Bank</button>
+            <button id="bankDetailEdit" onclick="editBankDetail()">Edit</button>
+            <button id="bankDetailSave" onclick="saveBankDetail()">Save</button>
+          </div>
+      </div>
+      <div class="bankDetailInput" id='saved_bank_list'>
+        
+      </div>
+    </div>
+
+    <div class="tabContainer" id="transactions-tab">
+      <div class=personalDetail-ctn>
+        <label id="personalDetail">Transactions</label>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+        </div>
+      </div>
+      <div style="display: flex; justify-content: flex-start; align-items: center;" onclick="toggleTransactionsView(event)">
+        <div class="transactions_tab active" id='tab_0'>
+          Send Transactions
+        </div>
+        <div class="transactions_tab" id='tab_1'>
+          Request Transactions
+        </div>
+        <div class="transactions_tab" id='tab_2'>
+          Received Transactions
+        </div>
+      </div>
+      <div id='send-transactions-table' class='transaction_table active'></div>
+      <div id='request-transactions-table' class='transaction_table'></div>
+      <div id='receive-transactions-table' class='transaction_table'></div>
+    </div>
+
+    <div class=tabContainer id="statements-tab">
+     
+      <div class=personalDetail-ctn>
+        <label id="personalDetail">Metrics</label>
+      </div>
+      <div style="display: flex; justify-content: flex-start; align-items: center;" onclick="toggleMetricView(event)">
+        <div class="metrics_view active" id='tab_0'>
+          Total Spendings
+        </div>
+        <div class="metrics_view" id='tab_1'>
+          Total/Avg Spendings (Monthly)
+        </div>
+        <div class="metrics_view" id='tab_2'>
+          Max Spendings (Monthly)
+        </div>
+        <div class="metrics_view" id='tab_3'>
+          Best Users
+        </div>
+      </div>
+      <div class="metrics_tab active">
+        <div>
+          <label for='from'>From:</label>
+          <input type="date" id='from-date' max="">
+          <label for='from'>To:</label>
+          <input type="date" id='to-date' max="">
+          <input type="submit" onclick="getMetricsForRange()">
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Send:</strong></label>
+          <label id="metric_send_label"></label>
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Received:</strong></label>
+          <label id="metric_receive_label"></label>
+        </div>
+      </div>
+      <div class="metrics_tab">
+        <div>
+          <label for="month-selection">Month</label>
+          <input type="month" id='metric-month'>
+          <input type="submit" onclick="getMetricsForMonth()">
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Send:</strong></label>
+          <label id="metric_send_label_month"></label>
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Avg Send:</strong></label>
+          <label id="metric_avg_send_label_month"></label>
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Received:</strong></label>
+          <label id="metric_receive_label_month"></label>
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Avg Received:</strong></label>
+          <label id="metric_avg_receive_label_month"></label>
+        </div>
+      </div>
+
+      <div class="metrics_tab">
+        <div>
+          <label for="month-selection">Month</label>
+          <input type="month" id='max-metric-month'>
+          <input type="submit" onclick="getMaxMetricsForMonth()">
+        </div>
+        <div style="margin-top: 0.5vh;">
+          <label><strong>Max Send Amount:</strong></label>
+          <label id='max-send-amount'></label>
+          <label><strong>Max Receive Amount:</strong></label>
+          <label id='max-receive-amount'></label>
+        </div>
+        <div id='max-transactions-table'></div>
+      </div>
+      <div class="metrics_tab">
+        <div id='best-users-table'></div>
+      </div>
+    </div>
+
+</div>
+
+
+   
+<div class=send-ctn id=sendMoney>
+    <div class=send-content>
+        <div class=send-header-ctn>
+          <img src="https://worldwaterskiers.com/wp-content/themes/WorldWaterSkiers/downloads/logos/W-Icon-White-Square.png"id=send-header-logo>
+          <label id="wallet-header">WALLET</label>
+          <button class=close id=closeSendButton onclick="closeSendPage()">X</button>
+        </div>
+        <div class=send-input-ctn>
+          <input type="email" placeholder="Email" id="email">
+          <input type="tel" placeholder="Telephone Number" id="telephone">
+          <input type="number" placeholder="Amount" id="amount">
+          <input type="text" placeholder="Comment(optional)" id="memo">
+          <button class=sbt-btn id=sendSubmit height=7vh onclick="sendMoneyToUser()" >Send Money</button>
+        </div>
+        
+    </div>
+</div>
+
+<div class=receive-ctn id=requestMoney>
+  <div class=request-content>
+      <div class=request-header-ctn>
+        <img src="https://worldwaterskiers.com/wp-content/themes/WorldWaterSkiers/downloads/logos/W-Icon-White-Square.png"id=request-header-logo>
+        <label id="wallet-header">WALLET</label>
+        <button class=close id=closeRequestButton onclick="closeRequestPage()">X</button>
+      </div>
+      <div class=request-input-ctn>
+        <input type="email" placeholder="Email" id="requestEmail">
+        <input type="tel" placeholder="Telephone Number" id="requestTelephone">
+        <input type="number" placeholder="Amount" id="requestAmount">
+        <input type="text" placeholder="Comment(optional)" id="requestMemo">
+        <button class=sbt-btn id=requestSubmit height=7vh onclick="requestMoneyFromUser()">Request Money</button>
+      </div>
+      
+  </div>
+</div>
+<div class=add-money-ctn id=addMoneyToWallet>
+  <div class=money-ctn>
+    <button type="submit" id="closeButton" onclick="closePage(this,'addMoneyToWallet')">X</button>
+    <div class="email-image-border">
+      <i class="fa fa-user icon"></i>
+      <input type="text" placeholder="Bank A/c Number" id="addMoneyAccountNumber">
+    </div>
+    <div class="email-image-border">
+      <i class="fa fa-user icon"></i>
+      <input type="text" placeholder="Bank Id" id="addMoneyBankId">
+    </div>
+    <div class="otp-image-border">
+      <i class="fas fa-dollar-sign"></i>
+      <input type="number" placeholder="Amount" id="addMoneyAmount">
+    </div>
+    <button class=sbt-btn id=addMoneyToWalletBtn height=7vh onclick="addMoneyToWallet()">Add Money To Wallet</button>
+  </div>
+</div>
+<div class=deposit-money-ctn id=depositMoneyToBank>
+  <div class=money-ctn>
+    <button type="submit" id="closeButton" onclick="closePage(this,'depositMoneyToBank')">X</button>
+    <div class="email-image-border">
+      <i class="fa fa-user icon"></i>
+      <input type="text" placeholder="Bank A/c Number" id="depositMoneyAccountNumber">
+    </div>
+    <div class="otp-image-border">
+      <i class="fas fa-dollar-sign"></i>
+      <input type="number" placeholder="Amount" id="depositMoneyAmount">
+    </div>
+    <button class=sbt-btn id=depositMoneyToWalletBtn height=7vh onclick="sendMoneyToBank()">Send Money To Bank</button>
+  </div>
+</div>
+<div class=otp-background-page id=submitOTP>
+    <div class=otp-ctn>
+      <button type="submit" id="closeButton" onclick="closePage(this,'submitOTP')">X</button>
+      <div class="email-image-border">
+        <i class="fa fa-user icon"></i>
+        <input type="email" placeholder="Email" id="emailOTP">
+      </div>
+      <div class="otp-image-border">
+        <i class="fas fa-key"></i>
+        <input type="text" placeholder="One Time Password" id="oneTimePasswordEmail">
+      </div>
+      <button class=sbt-btn id=submitOTPButton height=7vh onclick="verifyEmail(this,'submitOTP')">Submit</button>
+    </div>
+</div>
+
+<div class=otp-background-page id=phoneSubmitOTP>
+  <div class=otp-ctn>
+    <button type="submit" id="closeButton" onclick="closePage(this,'phoneSubmitOTP')">X</button>
+    <div class="email-image-border">
+      <i class="fas fa-phone"></i>
+      <input type="tel" placeholder="Phone Number" id="phoneOTP">
+    </div>
+    <div class="otp-image-border">
+      <i class="fas fa-key"></i>
+      <input type="text" placeholder="One Time Password" id="oneTimePasswordPhone">
+    </div>
+    <button class=sbt-btn id=submitOTPButton height=7vh onclick="verifyPhone(this,'phoneSubmitOTP')" >Submit</button>
+  </div>
+</div>
+<div class=otp-background-page id=bankSubmitOTP>
+  <div class=otp-ctn>
+    <button type="submit" id="closeButton" onclick="closePage(this,'bankSubmitOTP')">X</button>
+    <div class="otp-image-border">
+      <i class="fas fa-dollar-sign"></i>
+      <input type="number" placeholder="Amount" id="amountDeductedToVerify">
+    </div>
+    <button class=sbt-btn id=submitOTPButton height=7vh onclick="verifyBank(this,'bankSubmitOTP')">Submit</button>
+  </div>
+</div>
+<div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

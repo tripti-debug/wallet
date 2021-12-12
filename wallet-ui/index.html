@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-ctn">
+        <div class="login-table">
+            <label>Create Account for Wallet</label>
+            <hr>
+            <div class="personal-line">
+                <label id="personal">Personal Details</label>
+            </div>
+           
+            
+            <div class="personal-ctn">
+                <input type="text" placeholder="First Name" id="firstname">
+                <input type="text" placeholder="Last Name" id="lastname">
+                <input type="email" placeholder="Email" id="email">
+           </div>
+            <div class="personal-ctn-2">
+                <input type="tel" placeholder="Telephone" id="tel">
+                <input type="text" placeholder="SSN" id="ssn">
+                <input type="password" placeholder="Password" id="password">
+            </div>
+            
+            <div class="bank-line">
+                <label id="bank">Bank Details</label>
+            </div>
+            <div class="bank-ctn">
+                <input type="text" placeholder="Account Number" id="accountnumber">
+                <input type="text" placeholder="Branch id" id="branch">
+                <input type="number" placeholder="Bank Balance" id="bankname">
+            </div>
+            <button type="submit" id="submit-btn" onclick="createAccount()">Create Account</button>
+            <div class="login">
+                <p id="login">Already have account ? <button type="submit" id="sign-in-button" onclick="signIn(this)" >Sign In</a></p>
+            </div>
+        </div>
+        </div>
+        <div class="sign-in-background" id="signInBackground">
+            <div class="signin-ctn" id="sign-in-id">
+                <div class="sign-in-header">
+                    <label>Sign In</label>
+                    <button type="submit" id="closeButton" onclick="closePage()">Close</button>
+                </div>
+                
+                <div class=element-ctn>
+                    <input type="text" placeholder="SSN" id="sign-in-ssn">
+                    <input type="password" placeholder="Password" id="sign-in-password">
+                    <button type="submit" id="login-button" onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+
+        
+            
+           
+        
+ 

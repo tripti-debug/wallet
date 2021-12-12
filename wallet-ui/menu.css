@@ -1,0 +1,532 @@
+button {
+  border: none;
+  padding: 1vh 0.5vw;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+div[class=menu-ctn]{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width:80%;
+  height:94vh;
+  margin-left: 10%;
+}
+
+div[class=btn-ctn]{
+  display: flex;
+  width:98.5%;
+  height:13%;
+  background-color:#54ABDC;
+  padding: 1vh;
+ }
+
+ [id=homePageWalletLogo]{
+  width:12vh;
+  height:12vh;
+ }
+ [id=homePageWalletHeader]{
+  font-size: 22px;
+  font-weight:bold;
+  font-style: italic;
+  color: white;
+  margin-top: 6.5%;
+ }
+
+ div[class=tabContainer]{
+  display: none;
+  width:80%;
+  height:80%;
+  background-color: white;
+  padding:10% ;
+}
+
+ div[class=action-ctn]{
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 5px 10px 8px #888888;
+  border:1px solid #888888;
+  margin-top: 5vh;
+  padding:40px;
+ }
+ [id=heading]{
+   margin-left: 31%;
+   font-weight: bold;
+   font-size: 24px;;
+  
+ }
+[id=send],[id=request],[id=addMoney],[id=depositMoney]{
+    background-color:#54ABDC;
+    box-shadow: 5px 7px 8px #888888;
+    border:none;
+    color:white;
+    cursor: pointer;
+    width: 22%;
+    height: 6vh;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 38px;
+    cursor: pointer;
+}
+
+div[class=send-ctn]{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;/* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: black; /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+div[ class=send-content]{
+  display: flex;
+  flex-direction: column;
+  width: 40%; /* Full width */
+  height: 60%;
+  margin-left: 30%;
+  background-color: white;
+  border: 2px solid #888;
+  padding: 30px;
+}
+
+div[class=send-header-ctn]{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: bolder;
+  height:8vh;
+  background-color:white;
+  border-bottom: 1px solid #54ABDC;
+}
+
+[id=closeButton]{
+  width:5vh;
+  height:5vh;
+  font-weight: bold;
+  }
+
+[id=send-header-logo]{
+  width:7vh;
+  height: 7vh;
+}
+
+[id=wallet-header]{
+  font-size: 18px;
+  color:#54ABDC;
+  margin-left: -52vh;
+  margin-top:3vh;
+}
+div[class=send-input-ctn]{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:15px;
+  width: 60vh;
+  height: 90%;
+  background-color: #CEDEE7;
+  margin-left: 6.5%;
+  margin-top:4%;
+}
+
+[id=email],[id=telephone],[id=amount],[id=memo],[id=sendSubmit]{
+  margin-left: 20%;
+  border-radius: 12px;
+  width: 60%;
+  height:7vh;
+  text-align: center;
+  border:white;
+}
+
+[id=sendSubmit]{
+  background-color: #54ABDC;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+div[class=receive-ctn]{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;/* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: black; /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+div[ class=request-content]{
+  display: flex;
+  flex-direction: column;
+  width: 40%; /* Full width */
+  height: 60%;
+  margin-left: 30%;
+  background-color: white;
+  border: 2px solid #888;
+  padding: 30px;
+}
+
+div[class=request-header-ctn]{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: bolder;
+  height:8vh;
+  background-color:white;
+  border-bottom: 1px solid #54ABDC;
+}
+
+[id=closeButton]{
+  width:5vh;
+  height:5vh;
+  font-weight: bold;
+  }
+
+[id=request-header-logo]{
+  width:7vh;
+  height: 7vh;
+}
+
+div[class=request-input-ctn]{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:15px;
+  width: 60vh;
+  height: 90%;
+  background-color: #CEDEE7;
+  margin-left: 6.5%;
+  margin-top:4%;
+}
+
+[id=requestEmail],[id=requestTelephone],[id=requestAmount],[id=requestMemo],[id=requestSubmit]{
+  margin-left: 20%;
+  border-radius: 12px;
+  width: 60%;
+  height:7vh;
+  text-align: center;
+  border:white;
+}
+
+[id=requestSubmit]{
+  background-color: #54ABDC;
+  font-weight: bold;
+  font-size: 16px;
+}
+body, html {
+    font-family: Arial;
+    background-color: #F4F6F7;
+  }
+  
+  /* Style tab links */
+  .tablink {
+
+    background-color:#54ABDC;
+    color: #02428E;
+    color:white;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    height: 5vh;
+    margin-top: 7vh;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left:4vh;
+  }
+  
+  .tablink:hover{
+    background-color: white;
+    color:#02428E;
+  }
+
+  .sbt-btn:hover{
+    background-color: #05C342;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .transact-btn:hover{
+    background-color: #05C342;
+    color:white;
+    cursor: pointer;
+  }
+  /*div[class=account-flexbox]{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }*/
+  div[class=personalDetail-ctn]{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #54ABDC;
+    align-items: center;
+    padding-bottom: 0.5vh;
+  }
+
+  div[class="personalDetailInput"]{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 5vh;
+ }
+
+  div[class=bankDetail-ctn]{
+    display: flex;
+    margin-top: 10vh;;
+    justify-content: space-between;
+    border-bottom: 1px solid #54ABDC;
+    align-items: center;
+    padding-bottom: 0.5vh;
+}
+div[class="bankDetailInput"]{
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+[id=lastNameLabel],[id=emailLabel],[id=firstNameLabel],[id=telephoneLabel],[id=ssnLabel],[id=passwordLabel]{
+  width:11vh;
+  height:12px;
+  font-size: 12px;
+  display:inline-block
+}
+
+[id=firstname],[id=lastname],[id=mailId],[id=tel],[id=ssn],[id=password]{
+  width:20vh;
+  height:4vh;
+  border-radius: 12px;
+  border:none;
+  background-color: hsl(206, 30%, 95%);
+  text-align: center;
+}
+[id=lastNameLabel],[id=telephoneLabel]{
+  margin-left:4vh;
+}
+[id=firstname],[id=lastname],[id=tel]{
+margin-left:2vh;
+}
+[id=ssnLabel],[id=passwordLabel]{
+  margin-top:6vh;
+  margin-left: 4vh;
+}
+[id=mailId],[id=ssn],[id=password]{
+  margin-left:2vh;
+  margin-top:6vh;
+} 
+[id=accountNumberLabel],[id=bankNameLabel],[id=branchLabel]{
+  /* width:vh;
+  height:12px; */
+  font-size: 12px;
+  display:inline-block
+}
+
+[id=accountnumber],[id=bankname],[id=branch],[id=balance]{
+  width:20vh;
+  height:4vh;
+  border-radius: 12px;
+  border:none;
+  background-color: hsl(206, 30%, 95%);
+  text-align: center;
+}
+[id=bankNameLabel],[id=branchLabel]{
+
+  margin-left: 4vh;
+}
+[id=accountnumber],[id=bankname],[id=branch]{
+  margin-left:2vh;
+ 
+}
+  /* Style the tab content (and add height:100% for full page content) */
+  
+.verification-ctn{
+  display: flex;
+  box-shadow: 5px 10px 8px #888888;
+  justify-content: space-evenly;
+  width:100%;
+  height:50%;
+  border:1px solid #888888;
+}
+
+.verify-email-ctn,.verify-phone-ctn,.verify-bank-ctn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width:100%;
+  height:100%;
+}
+[id=verifyEmail],[id=verifyPhone],[id=verifyBank]{
+  width: 150px;
+  height:30px;
+  border-radius: 18px;
+  margin-left:25%;
+}
+[id=verifyEmailImage],[id=verifyPhoneImage],[id=verifyBankImage]{
+  margin-left:20px;
+  color: #54ABDC;
+  margin-left:32%;
+}
+.acount-information-ctn{
+  margin-top:3%;
+  box-shadow: 5px 10px 8px #888888;
+  border:1px solid #888888;
+  padding-top:1vh;
+  padding-bottom:1vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  width:95%;
+  height:20%;
+}
+.span-ctn{
+  display: flex;
+  justify-content: space-between;
+  height: 4vh;
+}
+[id=walletBalanceSpan],[id=ssnSpan]{
+  margin-top:2vh;
+}
+.otp-background-page,.add-money-ctn,.deposit-money-ctn{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 25vh; /* Location of the box */
+  padding-left:70vh;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;/* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: black; /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.otp-ctn,.money-ctn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 30%;
+  width: 20%;
+  padding:2%;
+  background-color: white;
+}
+[id=emailOTP],[id=oneTimePasswordEmail],[id=phoneOTP],[id=oneTimePasswordPhone],[id=amountDeductedToVerify],[id=addMoneyAccountNumber],[id=addMoneyAmount],[id=depositMoneyAccountNumber],[id=depositMoneyAmount],[id=addMoneyBankId]{
+  width:30vh;
+  height:3vh;
+  text-align: center;
+  border:none;
+}
+[id=submitOTPButton],[id=depositMoneyToWalletBtn],[id=addMoneyToWalletBtn]{
+  width:36.5vh;
+  height:5vh;
+  text-align: center;
+  background-color: #54ABDC;
+  border-radius: 18px;
+  font-weight: bold;
+  border:none;
+}
+.email-image-border,.otp-image-border{
+  border:1px solid black;
+  padding: 1vh;
+  border-radius: 18px;
+  }
+  [id=closeButton]{
+    height:2.5vh;
+    width:3.5vh;
+    font-weight: bold;
+    margin-left: 35vh;
+    margin-top:-5vh;
+  }
+  .close{
+    width:40px;
+    height:20px;
+  }
+
+  .personalDetailInput label {
+    white-space: nowrap;
+    width: 5vw;
+  }
+
+  #personalDetailSave {
+    display: none;
+    margin-left: 0.5vw;
+    color: white;
+    background-color: green;
+  }
+  
+  #bankDetailSave {
+    display: none;
+    margin-left: 0.5vw;
+    color: white;
+    background-color: green;
+  }
+  
+  #bankDetailEdit{
+    margin-left: 0.5vw;
+  }
+  
+  #addBankRowBtn {
+    color: white;
+    background-color: #54ABDC;
+  }
+  
+  #removeBankBtn {
+    color: white;
+    background-color: red;
+  }
+  
+  .transaction_table {
+    margin-top: 2vh;
+    display: none;
+  }
+  
+  .transaction_table.active {
+    display: block;
+  }
+  
+  .transactions_tab {
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+    border: 1px solid grey;
+    cursor: pointer;
+  }
+  
+  .transactions_tab.active {
+    color: white;
+    background-color: #02428E;
+  }
+
+  .metrics_view {
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+    border: 1px solid grey;
+    cursor: pointer;
+  }
+
+  .metrics_view.active {
+    color: white;
+    background-color: #02428E;
+  }
+
+  .metrics_tab {
+    display: none;
+    margin-top: 1vh;
+  }
+
+  .metrics_tab.active {
+    display: block;
+  }
